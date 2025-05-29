@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+      // Сохраняем путь перед перенаправлением
+      sessionStorage.redirect = location.pathname;
+      
+      // Перенаправляем на корневой URL с хэшем
+      const base = '/'; // Если приложение в поддиректории - укажите её здесь
+      location.replace(base + '#' + location.pathname + location.search + location.hash);
+    </script>
+    <noscript>
+      <meta http-equiv="refresh" content="0;url=/" />
+    </noscript>
+  </head>
+  <body>
+    <h1>Redirecting to application...</h1>
+    <a href="/">Click here if not redirected</a>
+  </body>
+</html>
